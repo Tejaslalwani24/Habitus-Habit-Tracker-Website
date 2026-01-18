@@ -132,7 +132,7 @@ const HabitusLanding = () => {
               onClick={() =>
                 window.open(
                   "https://www.youtube.com/watch?v=YWBRCoYkjZw",
-                  "_blank"
+                  "_blank",
                 )
               }
               className="flex items-center gap-2 rounded-full border border-white p-2.5 px-5 font-medium text-white transition-all duration-150 hover:-translate-y-0.5 hover:scale-115 active:translate-y-0 active:scale-100 hover:bg-white/10"
@@ -180,7 +180,7 @@ const HabitusLanding = () => {
         </h1>
       </section>
 
-      <motion.div variants={fadeUp} initial="hidden" animate="visible">
+      <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
         <section className="mt-12 mr-7 ml-7 grid grid-cols-3 gap-10 ">
           <div className="rounded-4xl bg-gray-100 p-8 pt-10 pb-10 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-115 hover:shadow-xl">
             <svg
@@ -262,79 +262,65 @@ const HabitusLanding = () => {
                 Join thousands of users from top companies using Habitus to
                 build better habits
               </h2>
-              <div className="mt-12 grid grid-cols-3 justify-items-center rounded-4xl bg-gray-100 p-8 text-gray-600">
-                <i
-                  onClick={() => window.open("https://www.google.com/")}
-                  className="devicon-google-plain-wordmark text-9xl transition-all hover:scale-115"
-                ></i>
-                <div className="flex items-center gap-2 text-2xl font-bold transition-all hover:scale-115">
+              <div className="mt-12 grid grid-cols-3 gap-8 rounded-4xl bg-gray-100 p-10 text-gray-600">
+                {/* Google */}
+                <div className="flex justify-center items-center">
+                  <i
+                    onClick={() => window.open("https://www.google.com/")}
+                    className="
+        devicon-google-plain-wordmark
+        text-8xl
+        cursor-pointer
+        transition-transform
+        duration-200
+        hover:scale-110
+      "
+                  ></i>
+                </div>
+
+                {/* Spotify */}
+                <div className="flex justify-center items-center">
                   <svg
+                    className="
+        h-12
+        w-40
+        cursor-pointer
+        transition-transform
+        duration-200
+        hover:scale-110
+      "
                     onClick={() => window.open("https://open.spotify.com/")}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 120 24"
                     fill="currentColor"
-                    className="h-13 "
+                   
                   >
+                    {" "}
                     <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.492 17.31c-.216.354-.678.468-1.032.252-2.85-1.74-6.438-2.13-10.662-1.164-.402.09-.81-.162-.9-.564-.09-.402.162-.81.564-.9 4.62-1.056 8.61-.6 11.772 1.332.354.216.468.678.258 1.032zm1.47-3.258c-.27.438-.846.576-1.284.306-3.258-2-8.226-2.586-12.084-1.416-.492.15-1.014-.126-1.164-.618-.15-.492.126-1.014.618-1.164 4.41-1.338 9.888-.69 13.62 1.608.438.27.576.846.312 1.284zm.126-3.414C15.228 8.244 8.85 8.034 5.118 9.168c-.588.18-1.218-.156-1.398-.744-.18-.588.156-1.218.744-1.398 4.29-1.302 11.334-1.062 15.768 1.572.534.318.708 1.014.39 1.548-.318.534-1.014.708-1.542.396z" />
-
-                    <text
-                      x="28"
-                      y="18"
-                      font-family="Arial, sans-serif"
-                      font-weight="bold"
-                      font-size="16"
-                      letter-spacing="-0.5"
-                    >
+                    <text x="28" y="18" fontSize="16" fontWeight="700">
                       Spotify
                     </text>
                   </svg>
                 </div>
-                <div className="flex items-center gap-2 text-2xl font-bold transition-all hover:scale-115">
+
+                {/* Treehouse */}
+                <div className="flex justify-center items-center">
                   <svg
                     onClick={() => window.open("https://teamtreehouse.com/")}
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 220 40"
+                    viewBox="0 0 200 40"
                     fill="currentColor"
-                    className=" h-14"
+                    className="
+        h-13
+        w-44
+        cursor-pointer
+        transition-transform
+        duration-200
+        hover:scale-110
+      "
                   >
-                    <path
-                      d="M20 4
-                    L34 11
-                    V27
-                    L20 34
-                    L6 27
-                    V11
-                    Z"
-                    />
-
-                    <path
-                      fill="#ffffff"
-                      d="M20 12
-                    c-3 0-5 3-5 6
-                    0 3 2 5 5 5
-                    3 0 5-2 5-5
-                    0-3-2-6-5-6z
-                    M15 22
-                    c-2 0-3 2-3 4
-                    0 2 1 3 3 3
-                    2 0 3-1 3-3
-                    0-2-1-4-3-4z
-                    M25 22
-                    c-2 0-3 2-3 4
-                    0 2 1 3 3 3
-                    2 0 3-1 3-3
-                    0-2-1-4-3-4z"
-                    />
-
-                    <text
-                      x="48"
-                      y="28"
-                      font-family="Inter, system-ui, sans-serif"
-                      font-size="28"
-                      font-weight="600"
-                      letter-spacing="-0.5"
-                      className=""
-                    >
+                    <path d="M20 4 L34 11 V27 L20 34 L6 27 V11 Z" /> <path fill="#ffffff" d="M20 12 c-3 0-5 3-5 6 0 3 2 5 5 5 3 0 5-2 5-5 0-3-2-6-5-6z M15 22 c-2 0-3 2-3 4 0 2 1 3 3 3 2 0 3-1 3-3 0-2-1-4-3-4z M25 22 c-2 0-3 2-3 4 0 2 1 3 3 3 2 0 3-1 3-3 0-2-1-4-3-4z" />
+                    <text x="48" y="28" fontSize="26" fontWeight="600">
                       treehouse
                     </text>
                   </svg>
@@ -362,7 +348,7 @@ const HabitusLanding = () => {
         </p>
       </section>
 
-      <motion.div variants={fadeUp} initial="hidden" animate="visible">
+      <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
         <section className="mt-12 mr-7 ml-7 grid grid-cols-3 gap-10">
           {[
             {
@@ -525,7 +511,7 @@ const HabitusLanding = () => {
       </section>
       <section className="px-8 mb-20">
         <div className="grid grid-cols-2 gap-4">
-          <motion.div variants={fadeDown} initial="hidden" animate="visible">
+          <motion.div variants={fadeDown} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
             {/* Q1 */}
             <div
               className="rounded-4xl bg-orange-500 p-8 cursor-pointer transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-103 hover:shadow-xl"
@@ -560,8 +546,7 @@ const HabitusLanding = () => {
               </AnimatePresence>
             </div>
           </motion.div>
-          <motion.div variants={fadeUp} initial="hidden" animate="visible">
-
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
             {/* Q2 */}
             <div
               className="rounded-4xl bg-rose-200 p-8 cursor-pointer transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-103 hover:shadow-xl"
@@ -593,72 +578,71 @@ const HabitusLanding = () => {
               </AnimatePresence>
             </div>
           </motion.div>
-        <motion.div variants={fadeDown} initial="hidden" animate="visible">
-        
-          
-
-          {/* Q3 */}
-          <div
-            className="rounded-4xl bg-pink-300 p-8 cursor-pointer transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-103 hover:shadow-xl"
-            onClick={() => setActiveQuestion(activeQuestion === 3 ? null : 3)}
-          >
-            <div className="flex items-center gap-4">
-              <motion.div
-                animate={{ rotate: activeQuestion === 3 ? 180 : 0 }}
-                className="rounded-full bg-pink-400 p-2"
-              >
-                ▼
-              </motion.div>
-              <p className="text-xl font-medium">
-                What happens if I miss a day?
-              </p>
-            </div>
-
-            <AnimatePresence>
-              {activeQuestion === 3 && (
+          <motion.div variants={fadeDown} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+            {/* Q3 */}
+            <div
+              className="rounded-4xl bg-pink-300 p-8 cursor-pointer transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-103 hover:shadow-xl"
+              onClick={() => setActiveQuestion(activeQuestion === 3 ? null : 3)}
+            >
+              <div className="flex items-center gap-4">
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="overflow-hidden"
+                  animate={{ rotate: activeQuestion === 3 ? 180 : 0 }}
+                  className="rounded-full bg-pink-400 p-2"
                 >
-                  <p className="mt-4">
-                    Nothing bad happens — you can continue anytime.
-                  </p>
+                  ▼
                 </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </motion.div>
-        <motion.div variants={fadeUp} initial="hidden" animate="visible">
-          {/* Q4 */}
-          <div
-            className="rounded-4xl bg-blue-100 p-8 cursor-pointer transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-103 hover:shadow-xl"
-            onClick={() => setActiveQuestion(activeQuestion === 4 ? null : 4)}
-          >
-            <div className="flex items-center gap-4">
-              <motion.div
-                animate={{ rotate: activeQuestion === 4 ? 180 : 0 }}
-                className="rounded-full bg-blue-200 p-2"
-              >
-                ▼
-              </motion.div>
-              <p className="text-xl font-medium">Can I cancel anytime?</p>
-            </div>
+                <p className="text-xl font-medium">
+                  What happens if I miss a day?
+                </p>
+              </div>
 
-            <AnimatePresence>
-              {activeQuestion === 4 && (
+              <AnimatePresence>
+                {activeQuestion === 3 && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="mt-4">
+                      Nothing bad happens — you can continue anytime.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+            {/* Q4 */}
+            <div
+              className="rounded-4xl bg-blue-100 p-8 cursor-pointer transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-103 hover:shadow-xl"
+              onClick={() => setActiveQuestion(activeQuestion === 4 ? null : 4)}
+            >
+              <div className="flex items-center gap-4">
                 <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="overflow-hidden"
+                  animate={{ rotate: activeQuestion === 4 ? 180 : 0 }}
+                  className="rounded-full bg-blue-200 p-2"
                 >
-                  <p className="mt-4">Yes, you can cancel whenever you want.</p>
+                  ▼
                 </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+                <p className="text-xl font-medium">Can I cancel anytime?</p>
+              </div>
+
+              <AnimatePresence>
+                {activeQuestion === 4 && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="mt-4">
+                      Yes, you can cancel whenever you want.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -688,7 +672,7 @@ const HabitusLanding = () => {
               <i
                 onClick={() =>
                   window.open(
-                    "https://www.linkedin.com/in/tejas-lalwani-a456962ab/"
+                    "https://www.linkedin.com/in/tejas-lalwani-a456962ab/",
                   )
                 }
                 class="devicon-linkedin-plain mt-8 text-2xl text-gray-500 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-115 hover:shadow-xl hover:text-white"
