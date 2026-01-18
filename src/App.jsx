@@ -248,8 +248,7 @@ const HabitusLanding = () => {
             </p>
           </div>
         </section>
-
-        <section className="mt-12"></section>
+        </motion.div>
         <section className="mt-24 px-8">
           <div className="grid grid-cols-2 gap-8">
             <img
@@ -329,7 +328,6 @@ const HabitusLanding = () => {
             </div>
           </div>
         </section>
-      </motion.div>
       <section id="howitworks" className="mt-28 flex flex-col items-center">
         <h1 className="text-6xl font-bold">Take a Look Inside</h1>
         <p className="mt-6 mb-6 text-xl font-normal">
@@ -347,6 +345,7 @@ const HabitusLanding = () => {
           Real stories from people who turned their goals into habits
         </p>
       </section>
+     
 
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
         <section className="mt-12 mr-7 ml-7 grid grid-cols-3 gap-10">
@@ -391,6 +390,9 @@ const HabitusLanding = () => {
             </div>
           ))}
         </section>
+        </motion.div>
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+          
         <section className="m-6 mt-28 rounded-4xl bg-blue-100 p-10 pb-20 pl-16 transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl">
           <svg
             width="150"
@@ -424,7 +426,8 @@ const HabitusLanding = () => {
             </div>
           </div>
         </section>
-
+        </motion.div>
+        <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
         <section id="pricing" className="mt-32 ml-8 flex flex-col">
           <h1 className="text-6xl font-bold">Simple, transparent pricing</h1>
           <p className="mt-8 mb-6 text-xl font-normal">
